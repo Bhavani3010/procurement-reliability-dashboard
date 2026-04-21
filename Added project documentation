@@ -1,0 +1,27 @@
+# Documentation – Smart Procurement Reliability Dashboard
+
+## Overview
+The Smart Procurement Reliability Dashboard predicts delays, cost overruns, and supplier reliability using machine learning models. It helps organizations improve procurement planning and reduce risks.
+
+## Workflow
+1. Generate synthetic procurement dataset
+2. Store data in relational database
+3. Train ML models for delay and cost prediction
+4. Forecast demand trends
+5. Visualize insights using Streamlit dashboard
+
+## Models Used
+Random Forest – Delay prediction  
+Gradient Boosting – Cost overrun prediction  
+Trend Model – Demand forecast  
+
+## Output
+Dashboard provides:
+- Delay risk prediction
+- Cost overrun estimation
+- Supplier performance score
+- Demand forecast trends
+- Explainable ML insights using SHAP
+
+## Benefits
+Improves supply chain efficiency and supports better decision-making.
