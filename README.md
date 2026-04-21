@@ -108,23 +108,35 @@ supplier_stats─┘         └── inventory
 
 ---
 
-## 🌟 Key Features
+🌟 Key Highlights
+✔ SHAP Explainability (transparent ML decisions)
+✔ Cost Overrun Prediction (real-world modeling)
+✔ Demand Forecasting (seasonal trends)
+✔ Supplier Health Scoring
+✔ What-if Scenario Analysis
+✔ Interactive Dashboard
 
-1. **SHAP Explainability** — not just predictions, but *why* each prediction was made
-2. **Cost Overrun Model** — Gradient Boosting on disruption risk factors (not formula recovery)
-3. **3-Month Demand Forecast** — seasonal decomposition with trend + seasonal multiplier
-4. **Supplier Health Score** — 6-factor weighted KPI model (like a credit score)
-5. **Live DB Explorer** — run custom SQL queries on the live database from the dashboard
-6. **What-If Scenario** — "what if Supplier X fails?" with combination ordering fallback
-7. **JIT Smart Reorder** — calculates exact reorder trigger based on lead time + daily consumption
-8. **Radar Chart Comparison** — multi-dimensional supplier comparison in one view
+📊 Business Impact
+Reduces procurement delays
+Improves supplier selection
+Controls cost overruns
+Prevents stockouts
+Enables proactive decision-making
 
----
+🔮 Future Work
+Real-time data integration
+Cloud deployment
+Integration with ERP systems
+Advanced ML models
 
-## 🛠️ Troubleshooting
+🛠️ Troubleshooting
+ModuleNotFoundError → pip install <module>
+FileNotFoundError → Run generate_data.py
+Dashboard not opening → Ensure correct folder
 
-**ModuleNotFoundError** → `pip install <module_name>`
-
-**FileNotFoundError** → Re-run `generate_data.py` then `ml_model.py`
-
-**Dashboard not opening** → Make sure you're in the project folder: `cd procurement_project`
+👨‍💻 Tech Stack
+Python
+Streamlit
+Scikit-learn
+Pandas, NumPy
+SHAP
