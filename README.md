@@ -168,15 +168,18 @@ Suppliers (1) ────< Orders >──── (1) Materials
 * Dashboard not opening → Check project folder
 
 ---
-
 ## 👨‍💻 Tech Stack
 
 * Python
 * Streamlit
 * Scikit-learn
-* Pandas, NumPy
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Joblib
+* Flask
 * SHAP
-
 ---
 
 ## 📎 Note
