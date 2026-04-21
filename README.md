@@ -211,12 +211,23 @@ The models show good performance in identifying procurement risks and cost varia
 --
 ## 🧠 Methodology
 
-Step 1: Data collection from synthetic procurement datasets  
+**Step 1: Data collection from synthetic procurement datasets  
 Step 2: Data preprocessing using pandas and numpy  
 Step 3: Feature selection for training models  
 Step 4: Model training using Random Forest and Gradient Boosting  
 Step 5: Model evaluation using accuracy and error metrics  
-Step 6: Visualization of predictions using Streamlit dashboard
+Step 6: Visualization of predictions using Streamlit dashboard**
+--
+## 📚 References
+
+1. Scikit-learn documentation
+https://scikit-learn.org
+
+2. Streamlit documentation
+https://docs.streamlit.io
+
+3. Pandas documentation
+https://pandas.pydata.org
 --
 Monica – PES1UG24CS813
 Bhavani – PES1UG23CS144
