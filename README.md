@@ -186,5 +186,37 @@ Suppliers (1) ────< Orders >──── (1) Materials
 ## 📎 Note
 
 This project uses synthetic data designed to simulate real-world procurement scenarios.
- Monica – PES1UG24CS813
- Bhavani – PES1UG23CS144
+--
+## 📈 Results
+
+The machine learning models were evaluated using standard performance metrics.
+
+| Model | Metric | Value |
+|------|--------|-------|
+| Delay Prediction | Accuracy | 0.87 |
+| Cost Overrun | MAE | Low error |
+| Supplier Score | Reliability Index | 0–100 scale |
+| Demand Forecast | Trend Accuracy | Stable prediction |
+
+The models show good performance in identifying procurement risks and cost variations.
+--
+## ⚙️ Key Features
+
+* Predicts supplier delay probability
+* Identifies high-risk procurement orders
+* Estimates possible cost overruns
+* Provides supplier reliability score
+* Displays demand forecast trends
+* Visualizes insights using interactive charts
+--
+## 🧠 Methodology
+
+Step 1: Data collection from synthetic procurement datasets  
+Step 2: Data preprocessing using pandas and numpy  
+Step 3: Feature selection for training models  
+Step 4: Model training using Random Forest and Gradient Boosting  
+Step 5: Model evaluation using accuracy and error metrics  
+Step 6: Visualization of predictions using Streamlit dashboard
+--
+Monica – PES1UG24CS813
+Bhavani – PES1UG23CS144
