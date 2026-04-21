@@ -30,7 +30,8 @@ It enables proactive, data-driven decision-making instead of reactive management
 ### 1. Install dependencies
 
 ```bash
-pip install pandas numpy scikit-learn streamlit plotly shap matplotlib seaborn openpyxl
+### 1. Install dependencies
+pip install pandas numpy scikit-learn streamlit plotly shap matplotlib seaborn openpyxl joblib flask
 ```
 
 ### 2. Generate dataset + database + ER diagram
