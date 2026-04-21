@@ -1,0 +1,9 @@
+material_id,material_name,current_stock,reorder_level,storage_capacity,daily_consumption
+M1,Circuit Boards,300,500,2000,45
+M2,Battery Cells,150,400,1500,60
+M3,Display Units,400,600,2500,55
+M4,Copper Wire,800,1000,3000,80
+M5,Resistors,1200,1500,4000,100
+M6,Capacitors,950,1200,3500,90
+M7,Microchips,280,500,2000,65
+M8,Steel Frames,600,800,2500,70

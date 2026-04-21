@@ -1,0 +1,9 @@
+material_id,material_name,category,unit,base_demand
+M1,Circuit Boards,Electronics,piece,500
+M2,Battery Cells,Electronics,piece,600
+M3,Display Units,Electronics,piece,450
+M4,Copper Wire,Raw Material,kg,800
+M5,Resistors,Electronics,piece,1000
+M6,Capacitors,Electronics,piece,900
+M7,Microchips,Electronics,piece,700
+M8,Steel Frames,Raw Material,kg,600

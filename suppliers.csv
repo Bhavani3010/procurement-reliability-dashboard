@@ -1,0 +1,11 @@
+supplier_id,supplier_name,location,distance_km,price_per_unit,transport_cost_per_km,reliability_score,available_stock,storage_cost_per_day,geopolitical_risk,strike_risk,quality_score,max_capacity
+S1,Alpha Materials,Chennai,400,95,2.0,0.92,1200,5.0,0.1,0.05,0.95,2000
+S2,Beta Supplies,Mumbai,200,85,2.5,0.65,800,4.0,0.3,0.2,0.75,1500
+S3,Gamma Industries,Delhi,1200,78,1.8,0.88,1500,6.0,0.5,0.15,0.9,3000
+S4,Delta Corp,Bangalore,50,105,3.0,0.97,600,7.0,0.05,0.02,0.98,1000
+S5,Echo Traders,Hyderabad,600,90,2.2,0.7,900,5.0,0.4,0.25,0.72,1800
+S6,Falcon Parts,Pune,150,88,2.8,0.85,1100,4.5,0.1,0.08,0.88,2200
+S7,Global Sources,Kolkata,1800,72,1.5,0.6,2000,3.5,0.6,0.3,0.65,4000
+S8,Horizon Goods,Ahmedabad,900,98,2.1,0.91,750,6.5,0.2,0.12,0.93,1500
+S9,Indus Supply,Jaipur,1100,82,1.9,0.78,1300,5.5,0.35,0.18,0.82,2500
+S10,Jetstream Co,Surat,700,93,2.3,0.83,950,4.8,0.25,0.1,0.87,1900
