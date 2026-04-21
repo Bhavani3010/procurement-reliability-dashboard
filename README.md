@@ -1,45 +1,40 @@
 # 🏭 Smart Procurement Reliability Dashboard
+
 ### P2 — Procurement Reliability | UE23CS342BA1 SCME | PES University
 
 ---
 
-## 📁 Project File Structure
+## 📌 Problem Statement
 
-```
-procurement_project/
-│
-├── generate_data.py      ← Step 1:  Generate all CSV datasets
-├── create_db.py          ← Step 1b: Build SQLite database (procurement.db)
-├── generate_erd.py       ← Step 1c: Render ER diagram (erd_schema.png)
-├── ml_model.py           ← Step 2:  Train all ML models
-├── explainability.py     ← Helper: SHAP + report cards
-├── app.py                ← Main Streamlit dashboard (8 pages)
-├── test_all.py           ← Self-test to verify everything
-│
-├── suppliers.csv         ← 10 suppliers with risk factors
-├── materials.csv         ← 8 materials (electronics + raw)
-├── inventory.csv         ← Current stock levels & reorder logic
-├── orders.csv            ← 1000 orders over 2 years
-├── supplier_stats.csv    ← Aggregated supplier performance + health scores
-├── forecast.csv          ← 3-month demand predictions per material
-│
-├── delay_model.pkl       ← Random Forest (delay classification)
-├── overrun_model.pkl     ← Gradient Boosting (cost overrun regression)
-├── cost_model.pkl        ← Linear Regression (baseline cost display)
-├── procurement.db        ← SQLite database (6 tables + 3 views)
-└── erd_schema.png        ← Entity Relationship Diagram
-```
+Organizations face challenges in ensuring timely and reliable procurement of raw materials due to supplier delays, cost fluctuations, and lack of predictive insights.
+
+This leads to supply chain disruptions, increased costs, and inefficient decision-making.
 
 ---
 
-## ⚙️ Setup (First Time Only)
+## 💡 Solution
 
-### 1. Install Python libraries
+This project provides an interactive Streamlit dashboard integrated with Machine Learning to:
+
+* Predict procurement delays
+* Estimate cost overruns
+* Forecast demand
+* Evaluate supplier performance
+
+It enables proactive, data-driven decision-making instead of reactive management.
+
+---
+
+## 🚀 How to Run
+
+### 1. Install dependencies
+
 ```bash
 pip install pandas numpy scikit-learn streamlit plotly shap matplotlib seaborn openpyxl
 ```
 
 ### 2. Generate dataset + database + ER diagram
+
 ```bash
 python generate_data.py
 python create_db.py
@@ -47,96 +42,143 @@ python generate_erd.py
 ```
 
 ### 3. Train ML models
+
 ```bash
 python ml_model.py
 ```
 
-### 4. Self-test (recommended)
+### 4. (Optional) Run self-test
+
 ```bash
 python test_all.py
 ```
 
 ### 5. Launch dashboard
+
 ```bash
 streamlit run app.py
 ```
-Opens at: **http://localhost:8501**
+
+### 6. Open in browser
+
+http://localhost:8501
 
 ---
 
-## 🧠 ML Models
-
-| Model | Algorithm | What it predicts | Key Metric |
-|-------|-----------|-----------------|------------|
-| Model 1 | Random Forest Classifier | Will this order be delayed? (0/1) | Accuracy + 5-fold CV |
-| Model 2 | Gradient Boosting Regressor | How much cost overrun (₹) beyond baseline? | R², MAE |
-| Model 3 | Weighted KPI Score | Supplier health score (0–100) | Interpretable formula |
-| Model 4 | Seasonal Linear Trend | Demand per material (1/2/3 months ahead) | Trend + seasonal factor |
-
-> **Note on Model 2:** Unlike a simple total-cost formula, this model predicts the *excess* cost
-> caused by supply chain disruptions (delays, partial deliveries, quality failures) — genuine ML.
-
----
-
-## 📊 Dashboard Pages
-
-| Page | Description |
-|------|-------------|
-| 🏠 Overview | KPI cards, spend trend, supplier health, seasonal comparison |
-| 📦 Supplier Analysis | Scorecards, radar chart, delay/quality/cost comparison |
-| 📊 Procurement Orders | Stacked cost, spend heatmap, filterable order table |
-| 🤖 ML Predictions | Delay gauge, cost overrun predictor (Gradient Boosting), backup recommendations |
-| ⚠️ Alerts | Stockout alerts, JIT reorder, What-If scenario analysis |
-| 📈 Demand Forecast | 3-month ahead forecast, seasonal factors, historical trends |
-| 🔍 Explainability | SHAP global importance, order explanation, supplier report cards, cost breakdown |
-| 🗄️ Database & Schema | ER diagram, SQL DDL, live SQLite query explorer |
-
----
-
-## 🗄️ Database Schema
-
-6 tables with enforced foreign keys:
+## 📁 Project Structure
 
 ```
-suppliers   ──< orders >── materials
-               │
-supplier_stats─┘         └── inventory
-                          └── forecast
+procurement_project/
+│
+├── generate_data.py      
+├── create_db.py          
+├── generate_erd.py       
+├── ml_model.py           
+├── explainability.py     
+├── app.py                
+├── test_all.py           
+│
+├── suppliers.csv         
+├── materials.csv         
+├── inventory.csv         
+├── orders.csv            
+├── supplier_stats.csv    
+├── forecast.csv          
+│
+├── delay_model.pkl       
+├── overrun_model.pkl     
+├── cost_model.pkl        
+├── procurement.db        
+└── erd_schema.png        
 ```
-
-3 pre-built views: `v_order_details`, `v_supplier_summary`, `v_inventory_alert`
 
 ---
 
-🌟 Key Highlights
-✔ SHAP Explainability (transparent ML decisions)
-✔ Cost Overrun Prediction (real-world modeling)
-✔ Demand Forecasting (seasonal trends)
-✔ Supplier Health Scoring
-✔ What-if Scenario Analysis
-✔ Interactive Dashboard
+## 🤖 Machine Learning Models
 
-📊 Business Impact
-Reduces procurement delays
-Improves supplier selection
-Controls cost overruns
-Prevents stockouts
-Enables proactive decision-making
+| Model            | Algorithm            | Purpose                                | Metric              |
+| ---------------- | -------------------- | -------------------------------------- | ------------------- |
+| Delay Prediction | Random Forest        | Predicts if an order will be delayed   | Accuracy            |
+| Cost Overrun     | Gradient Boosting    | Predicts extra cost due to disruptions | R², MAE             |
+| Supplier Score   | Weighted KPI Model   | Evaluates supplier reliability (0–100) | Interpretable       |
+| Demand Forecast  | Seasonal Trend Model | Predicts demand for next 3 months      | Trend + Seasonality |
 
-🔮 Future Work
-Real-time data integration
-Cloud deployment
-Integration with ERP systems
-Advanced ML models
+---
 
-🛠️ Troubleshooting
-ModuleNotFoundError → pip install <module>
-FileNotFoundError → Run generate_data.py
-Dashboard not opening → Ensure correct folder
+## 📊 Dashboard Features
 
-👨‍💻 Tech Stack
-Python
-Streamlit
-Scikit-learn
-Pandas, NumPy
-SHAP
+* KPI Dashboard (delay rate, cost, supplier score)
+* Supplier Analysis (performance comparison)
+* Order Insights (spend trends, heatmaps)
+* ML Predictions (delay + cost forecasting)
+* Alerts (stockout & risk alerts)
+* Demand Forecast (future demand trends)
+* Explainability (SHAP-based insights)
+* Database Explorer (SQL + ER diagram)
+
+---
+
+## 🗄️ Database Design
+
+Relational schema:
+
+Suppliers (1) ────< Orders >──── (1) Materials
+│
+└── Inventory (1:1 with Materials)
+
+* Foreign keys: supplier_id, material_id
+* Supports analytical queries
+
+---
+
+## 🌟 Key Highlights
+
+* SHAP Explainability (transparent ML decisions)
+* Cost Overrun Prediction (real-world modeling)
+* Demand Forecasting (seasonal trends)
+* Supplier Health Scoring
+* What-if Scenario Analysis
+* Interactive Dashboard
+
+---
+
+## 📊 Business Impact
+
+* Reduces procurement delays
+* Improves supplier selection
+* Controls cost overruns
+* Prevents stockouts
+* Enables proactive decision-making
+
+---
+
+## 🔮 Future Work
+
+* Real-time data integration
+* Cloud deployment
+* ERP system integration
+* Advanced ML models
+
+---
+
+## 🛠️ Troubleshooting
+
+* ModuleNotFoundError → pip install <module>
+* FileNotFoundError → Run generate_data.py
+* Dashboard not opening → Check project folder
+
+---
+
+## 👨‍💻 Tech Stack
+
+* Python
+* Streamlit
+* Scikit-learn
+* Pandas, NumPy
+* SHAP
+
+---
+
+## 📎 Note
+
+This project uses synthetic data designed to simulate real-world procurement scenarios.
