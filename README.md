@@ -182,3 +182,5 @@ Suppliers (1) ────< Orders >──── (1) Materials
 ## 📎 Note
 
 This project uses synthetic data designed to simulate real-world procurement scenarios.
+ Monica – PES1UG24CS813
+ Bhavani – PES1UG23CS144
